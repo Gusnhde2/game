@@ -4,28 +4,13 @@ import { styles } from "../components/number-input/NumberInputStyle";
 import { View } from "react-native";
 import { useState } from "react";
 
-const StartScreen = (props) => {
-  const [number, setNumber] = useState("");
-
-  const setNumberHandler = (enteredText) => {
-    setNumber(enteredText);
-  };
-
-  const numberHandler = () => {
-    props.startNumber(number);
-  };
-
+const StartScreen = ({ onPress, reset, onChange, number }) => {
   return (
     <View style={styles.container}>
-      <NumberInput onChange={setNumberHandler} number={number} />
+      <NumberInput onChange={onChange} number={number} />
       <View style={styles.btnsContainer}>
-        <NumberBtn
-          title='Reset'
-          onPress={() => {
-            setNumber("");
-          }}
-        />
-        <NumberBtn title='Confirm' onPress={numberHandler} />
+        <NumberBtn title='Reset' onPress={reset} />
+        <NumberBtn title='Confirm' onPress={onPress} />
       </View>
     </View>
   );

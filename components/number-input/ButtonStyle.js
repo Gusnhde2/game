@@ -2,8 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   button: {
-    alignSelf: "stretch",
-    backgroundColor: "#7a1a4a",
+    backgroundColor: "#577590",
     margin: 10,
     alignItems: "center",
     justifyContent: "center",
@@ -25,7 +24,7 @@ export const styles = StyleSheet.create({
     textAlign: "center",
   },
   ripple: {
-    color: "#FFE35F",
+    color: "#43aa8b",
     borderless: true,
   },
 });

@@ -11,16 +11,18 @@ export const styles = StyleSheet.create({
 
   inputContainer: {
     alignItems: "center",
-    width: "95%",
+    width: 350,
     elevation: 8,
   },
 
   textBox: {
     borderColor: "#222",
+    backgroundColor: "#fffa",
     borderWidth: 1,
     marginBottom: 30,
     width: "70%",
     alignItems: "center",
+    borderRadius: 20,
   },
 
   text: {
@@ -33,7 +35,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#5b1b2b",
+    backgroundColor: "#f94144",
     gap: 10,
     height: 150,
   },
