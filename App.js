@@ -1,20 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Text, View } from "react-native";
+import { styles } from "./appStyles";
+import NumberInput from "./components/number-input/NumberInput";
+import StartScreen from "./screens/StartScreen";
+import GameScreen from "./screens/GameScreen";
+import { useState } from "react";
 
 export default function App() {
+  const [confirm, setConfirm] = useState(false);
+  const [number, setNumber] = useState();
+
+  console.log(number);
+
+  const confirmNumberHandler = (startNumber) => {
+    if (startNumber > 0) {
+      setNumber(startNumber);
+      setConfirm(true);
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {!confirm && <StartScreen startNumber={confirmNumberHandler} />}
+      {confirm && (
+        <GameScreen
+          number={number}
+          onPress={() => {
+            setConfirm(false);
+          }}
+        />
+      )}
+      <StatusBar style='auto' />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
